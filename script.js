@@ -116,8 +116,6 @@ $( document ).ready(function() {
 	function initiateGuessing() {
 		// computer picks a number from 1-100
 		computerNumber = randomNum();	
-		// print in console for hacks
-		console.log('Guessing game hacks: ' + computerNumber);
 		// print initiate prompt
 		printComputerReply('I\'m thinking of a number between 1 &amp; '+(wins+1)*10, textIsYellow);
 		// focus on guess field - hide on portfolio site
