@@ -1,0 +1,170 @@
+/* compiled from Sass */
+
+/* to add: responsive behavior, animation for computer text */
+
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+html {
+  background-color: #9496A5;
+}
+
+h1 {
+  position: absolute;
+  left: 20%;
+  display: block;
+  color: #26fcfc;
+  font-size: 40px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+h1::before {
+  content: "THE NUMBER GUESSING GAME";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 2px,
+    white 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 10px;
+  left: 0;
+  z-index: -1;
+  transition: 1s;
+}
+
+h1::after {
+  content: "THE NUMBER GUESSING GAME";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 2px,
+    white 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 10px;
+  left: 0px;
+  transition: 1s;
+}
+
+h1:hover:before {
+  top: 10px;
+  left: 10px;
+}
+
+h1:hover:after {
+  top: -10px;
+  left: -10px;
+} 
+
+h3 {
+  font-family: 'Mr Dafoe';
+  margin: 0;
+  margin-left: 40%;
+  font-size: 2em;
+  letter-spacing: 4px;
+  color: white;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  transform: rotate(-7deg);
+}
+#guessing-container {
+  margin: 50px auto;
+  position: relative;
+  max-width: 600px;
+  padding-bottom: 57px;
+  font-family: 'Lucida Sans', Arial, Helvetica, sans-serif;
+  font-size: 0.9em; }
+  #guessing-container #guessing-text {
+    overflow-y: scroll;
+    height: 300px;
+    background-color: #F1F1F1;
+    padding: 10px;
+    border: solid 3px #545454;
+    border-bottom: 0; }
+  #guessing-container #guessing-inner {
+    height: 301px; }
+  #guessing-container span {
+    display: inline-block;
+    color: #5a5a5a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    position: relative; }
+  #guessing-container #userGuess {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    border: 0;
+    left: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-bottom: #61F1C9 solid 5px;
+    width: 100%;
+    width: calc(100% - 2px);
+    font-size: 1.1em;
+    background-color: #444;
+    text-indent: 15px;
+    color: #DEDEDE;
+    letter-spacing: 1px;
+    outline: none; }
+  #guessing-container .computerTxt-container {
+    display: block; }
+    #guessing-container .computerTxt-container i {
+      background-color: #5a5a5a;
+      color: #ececec;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 1.1em; }
+  #guessing-container .computerTxt {
+    background-color: #FFDE90;
+    text-align: left;
+    margin-left: 20px; }
+  #guessing-container .computerTxt.new-color {
+    background-color: #BCDEFB; }
+  #guessing-container .computerTxt::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -10px;
+    border: 9px solid;
+    border-color: transparent transparent #FFDE90; }
+  #guessing-container .computerTxt.new-color::before {
+    border-color: transparent transparent #BCDEFB; }
+  #guessing-container .userTxt-container {
+    text-align: right; }
+    #guessing-container .userTxt-container i {
+      padding: 10px 12px;
+      border-radius: 50%;
+      font-size: 1.1em;
+      margin-right: 5px;
+      background-color: #5a5a5a;
+      color: #ececec; }
+  #guessing-container .userTxt {
+    background-color: #61F1C9;
+    text-align: right;
+    margin-right: 20px; }
+  #guessing-container .userTxt::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -9px;
+    border: 9px solid;
+    border-color: transparent transparent #61F1C9; }
+  #guessing-container input[type=number]::-webkit-inner-spin-button,
+  #guessing-container input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+
+/*# sourceMappingURL=main.css.map */
