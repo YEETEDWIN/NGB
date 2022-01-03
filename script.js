@@ -51,8 +51,6 @@ $( document ).ready(function() {
 	}	
 
 	function checkMyNum(guessNum) {
-		document.getElementById("wins").innerHTML = "Wins:  "+wins
-		document.getElementById("guesses").innerHTML = "Guesses:  "+guess
 		var ifNumber = $.isNumeric(userNumber);
 		if (ifNumber === false) {
 			printComputerReply(doesNotCompute[sadface], textIsYellow);
@@ -65,6 +63,7 @@ $( document ).ready(function() {
 			return;
 		}
 		else {
+			document.getElementById("guesses").innerHTML = "Guesses:  "+guess
 			if (computerNumber < userNumber) {
 				printComputerReply('Too high! Guess again', textIsYellow);
 				guess++
@@ -94,19 +93,27 @@ $( document ).ready(function() {
 		}
 	}
 
+
 	function playAgain(userWon) {
 		if (userWon) {
-			guess = 1;
-			//set new bg color for computer
-			textIsYellow = !textIsYellow;
-			//wait a minute before initiating new game
-			setTimeout(initiateGuessing, 1350);
-			return textIsYellow;
+			if (wins < 20) {
+				document.getElementById("wins").innerHTML = "Wins:  "+wins
+				//set new bg color for computer
+				textIsYellow = !textIsYellow;
+				//wait a minute before initiating new game
+				setTimeout(initiateGuessing, 1000);
+				return textIsYellow;
+			}
+			else {
+				printComputerReply2('You won the game! You deserve a reward, here are some sweet things...');
+				printComputerReply2('🍫 🍪 🍩 🍧 🍦 🍰 🧁 🍬 🍭')
+				scrollDown()
+			}
 		}
 	}
 
 	function randomNum() {
-		return Math.ceil(Math.random()*((wins+1)*10));
+		return Math.ceil(Math.random()*((wins+1)*5000));
 	}
 
 	function randomEmojis() {
@@ -116,8 +123,10 @@ $( document ).ready(function() {
 	function initiateGuessing() {
 		// computer picks a number from 1-100
 		computerNumber = randomNum();	
+		// print in console for hacks
+		console.log('Guessing game hacks: ' + computerNumber);
 		// print initiate prompt
-		printComputerReply('I\'m thinking of a number between 1 &amp; '+(wins+1)*10, textIsYellow);
+		printComputerReply('I have a number in mind between 1 &amp; '+(wins+1)*5000, textIsYellow);
 		// focus on guess field - hide on portfolio site
 		// $('#userGuess').focus();
 		scrollDown();
@@ -131,7 +140,10 @@ $( document ).ready(function() {
 		else {
 			$('#guessing-inner').append('<div class="computerTxt-container"><i class="fa fa-terminal"></i><span class="computerTxt new-color">' + computerReply + '</span></div>');
 		}
-		
+	}
+
+	function printComputerReply2(computerReply) {
+		$('#guessing-inner').append('<div class="computerTxt-container"><i class="fa fa-terminal"></i><span class="computerTxt final-color">' + computerReply + '</span></div>');
 	}
 
 	function printUserReply(text) {
