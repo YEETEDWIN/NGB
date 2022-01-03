@@ -123,8 +123,6 @@ $( document ).ready(function() {
 	function initiateGuessing() {
 		// computer picks a number from 1-100
 		computerNumber = randomNum();	
-		// print in console for hacks
-		console.log('Guessing game hacks: ' + computerNumber);
 		// print initiate prompt
 		printComputerReply('I have a number in mind between 1 &amp; '+(wins+1)*5000, textIsYellow);
 		// focus on guess field - hide on portfolio site
@@ -155,53 +153,3 @@ $( document ).ready(function() {
 	}
 
 });
-
-/*
-
-(و˃ᴗ˂)و
-
-(╯°□°）╯︵ ┻━┻
-
-ʕ·ᴥ·ʔ
-
-＼（＾○＾）人（＾○＾）／
-
-ಠಿ ˑ̫ ಠಿ
-
-＼(^ω^＼)
-
-ヘ(^0^)ヘ
-
-(~˘▾˘)~
-
-┗(＾0＾)┓
-
-(つ◕౪◕)つ━☆ﾟ.*･｡ﾟ
-
-♪ヽ( ⌒o⌒)/
-
-٩( ´◡` )۶
-
-(◡ ﹏ ◡)
-
-(◕ ﹏ ◕)
-
-(╥﹏╥)
-
-(Ͼ˳Ͽ)
-
-ಠ_ಠ
-
-へ[ •́‸ •̀ ]ʋ
-
-(◕︿◕✿)
-
-┏༼ ◉ ╭╮ ◉༽┓ 
-
-(⌯˃̶᷄ ﹏ ˂̶᷄⌯)
-
-(ლಠ益ಠ)ლ
-
-(・_・ヾ
-
-*/
